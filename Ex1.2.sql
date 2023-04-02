@@ -1,4 +1,3 @@
-create database Insurance1;
 use Insurance1;
 create table person (driver_id int, name varchar(20), address varchar(20), primary key(driver_id)); 
 create table car (license int, model varchar(20), year int, primary key(license));
