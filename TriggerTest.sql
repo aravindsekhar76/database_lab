@@ -1,4 +1,4 @@
-create database triggertest2;
+create database triggertest2
 use triggertest2;
 
 create table Product (
