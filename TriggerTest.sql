@@ -1,5 +1,5 @@
 create database triggertest2;
-use triggertest2
+use triggertest2;
 
 create table Product (
     PID int,
