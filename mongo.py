@@ -4,7 +4,7 @@ client = pymongo.MongoClient(conn)
 database = client['MCA']
 collection = database['college1']
 
-for i in collection.find({"course":"MCA"})
+for i in collection.find({"course":"MCA"}):
     print(i)
 
 for i in collection.find({"gender": "female","course": "MCA"}):
