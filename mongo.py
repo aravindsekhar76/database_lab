@@ -1,6 +1,6 @@
 import pymongo 
 conn= "mongodb://localhost:27017/"
-client = pymongo.MongoClient(conn
+client = pymongo.MongoClient(conn)
 database = client['MCA']
 collection = database['college1']
 
