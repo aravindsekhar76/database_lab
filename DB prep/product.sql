@@ -1,0 +1,15 @@
+create database store;
+use store;
+create table product (pdtid int primary key , pdtname varchar(25), price bigint, quantity int);
+select * from product;
+insert into product values(101, "pears",35,20);
+insert into product values(102, "lifebouy",25,10);
+insert into product values(103, "parleg",10,50);
+insert into product values(104, "hideandseek",30,15);
+insert into product values(105, "milma",28,5);
+insert into product values(106, "vicks",25,5),(107, "lizol",80,15),(108, "rope",50,10),(109, "icecream",25,10),(110, "maggi",20,20);
+call quantity_check(10);
+call fewleft;
+call insert_product(111,"pinpoint",10,10);
+alter table product drop barcode;
+call price_asc;

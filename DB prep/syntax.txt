@@ -1,0 +1,27 @@
+-- stored procedures 
+
+CREATE PROCEDURE 'insert_product'(in barcode int, in pdtname varchar(25), in price bigint, in quantity int )
+BEGIN 
+IF price>0 AND quantity >0 
+THEN
+insert into product (pdtid,pdtname,price,quantity) values(barcode,pdtname,price,quantity) ;
+else
+signal sqlstate '45000' set message_text='invalid price or quantity';
+end if;
+END
+
+-- trigger 
+
+DELIMITER //
+CREATE  TRIGGER `update_qty` AFTER INSERT ON `saleitem` FOR EACH ROW 
+BEGIN
+update product set product.qty_instock=product.qty_instock-new.qty where product.pid= new.pdtid;
+END //
+DELIMITER;
+
+-- VIEW 
+
+CREATE VIEW product_view AS
+SELECT product_id, product_name, price
+FROM products
+WHERE category = 'Electronics'; 

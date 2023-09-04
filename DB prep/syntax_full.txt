@@ -1,0 +1,83 @@
+1.Creating a Table:
+
+CREATE TABLE table_name (
+    column1 datatype,
+    column2 datatype,
+    ...
+);
+
+2.Inserting Data:
+
+INSERT INTO table_name (column1, column2, ...)
+VALUES (value1, value2, ...);
+
+3.Updating Data:
+
+UPDATE table_name
+SET column1 = new_value1, column2 = new_value2
+WHERE condition;
+
+4.Deleting Data:
+
+DELETE FROM table_name
+WHERE condition;
+
+5.Joins (INNER JOIN, LEFT JOIN, RIGHT JOIN):
+
+SELECT column1, column2, ...
+FROM table1
+INNER JOIN table2 ON table1.column_name = table2.column_name;
+
+6.Sorting Data with ORDER BY:
+
+SELECT * FROM table_name
+ORDER BY column_name ASC|DESC;
+
+7.Grouping Data with GROUP BY:
+
+SELECT column1, COUNT(column2)
+FROM table_name
+GROUP BY column1;
+
+8.Aggregate Functions (SUM, AVG, COUNT, MAX, MIN):
+
+SELECT COUNT(*) FROM table_name;
+
+9.Updating Table Structure (ALTER TABLE):
+
+ALTER TABLE table_name
+ADD column_name datatype;
+
+10.Creating a View:
+
+CREATE VIEW view_name AS
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+
+11.Creating a Trigger:
+
+DELIMITER//
+CREATE TRIGGER trigger_name
+[BEFORE|AFTER] [INSERT|UPDATE|DELETE] ON table_name
+FOR EACH ROW
+BEGIN
+  -- Trigger logic here
+END//   
+DELIMITER;
+
+12.Creating a Stored Procedure:
+DELIMITER//
+CREATE PROCEDURE procedure_name(parameters)
+BEGIN
+  -- Procedure logic here
+END//
+DELIMITER;
+
+import pymongo
+conn=pymongo.MongoClient("mongodb://localhost:27017/")
+db= conn[db_name]
+coll= db[coll_name]
+coll.insert_many()
+coll.update_one({"name":"anu"},{"$set":{"id":4}})
+coll.delete_many()
